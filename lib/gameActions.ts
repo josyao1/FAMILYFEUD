@@ -39,6 +39,9 @@ export function getInitialState(): GameState {
     steal: {
       stealingTeam: null,
     },
+    timer: {
+      startedAt: null,
+    },
   }
 }
 
@@ -323,4 +326,12 @@ export async function nextRound(code: string, state: GameState, multiplier: 1 | 
 
 export async function endGame(code: string, state: GameState) {
   await updateState(code, { ...state, phase: 'gameover' })
+}
+
+export async function startTimer(code: string, state: GameState) {
+  await updateState(code, { ...state, timer: { startedAt: Date.now() } })
+}
+
+export async function resetTimer(code: string, state: GameState) {
+  await updateState(code, { ...state, timer: { startedAt: null } })
 }

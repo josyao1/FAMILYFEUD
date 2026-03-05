@@ -9,7 +9,7 @@ import HostFaceoff from '@/components/host/HostFaceoff'
 import HostPlaying from '@/components/host/HostPlaying'
 import HostSteal from '@/components/host/HostSteal'
 import HostRoundEnd from '@/components/host/HostRoundEnd'
-import { setPlayers } from '@/lib/gameActions'
+import { setPlayers, startTimer, resetTimer } from '@/lib/gameActions'
 
 function RosterEditor({ code, state }: { code: string; state: GameState }) {
   const [editing, setEditing] = useState<{ team: 0 | 1; idx: number; value: string } | null>(null)
@@ -98,6 +98,7 @@ export default function HostPage() {
   const [state, setState] = useState<GameState | null>(null)
   const [error, setError] = useState('')
   const [showRoster, setShowRoster] = useState(false)
+  const [timeLeft, setTimeLeft] = useState<number | null>(null)
 
   useEffect(() => {
     let isMounted = true
@@ -132,6 +133,20 @@ export default function HostPage() {
       supabase.removeChannel(channel)
     }
   }, [code])
+
+  useEffect(() => {
+    if (!state?.timer?.startedAt) {
+      setTimeLeft(null)
+      return
+    }
+    const tick = () => {
+      const elapsed = (Date.now() - state.timer.startedAt!) / 1000
+      setTimeLeft(Math.max(0, 15 - elapsed))
+    }
+    tick()
+    const id = setInterval(tick, 100)
+    return () => clearInterval(id)
+  }, [state?.timer?.startedAt])
 
   if (error) {
     return (
@@ -189,6 +204,28 @@ export default function HostPage() {
         ))}
         {state.multiplier === 2 && (
           <span className="text-yellow-400 font-bold self-center text-sm">2×</span>
+        )}
+        {timeLeft === null ? (
+          <button
+            onClick={() => startTimer(code, state)}
+            className="text-xs px-3 py-1 rounded-full border border-gray-600 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 transition-colors self-center"
+          >
+            ⏱ 15s
+          </button>
+        ) : timeLeft === 0 ? (
+          <button
+            onClick={() => resetTimer(code, state)}
+            className="text-xs px-3 py-1 rounded-full border border-red-500 text-red-400 animate-pulse self-center"
+          >
+            ✕ TIME
+          </button>
+        ) : (
+          <button
+            onClick={() => resetTimer(code, state)}
+            className="text-xs px-3 py-1 rounded-full border border-yellow-500 text-yellow-400 self-center"
+          >
+            ✕ {Math.ceil(timeLeft)}s
+          </button>
         )}
       </div>
 

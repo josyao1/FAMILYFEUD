@@ -42,4 +42,7 @@ export type GameState = {
   steal: {
     stealingTeam: 0 | 1 | null
   }
+  timer: {
+    startedAt: number | null  // Date.now() ms when started, null = idle
+  }
 }

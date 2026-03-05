@@ -62,6 +62,47 @@ function PointsCounter({ points }: { points: number }) {
   )
 }
 
+function TimerDisplay({ startedAt }: { startedAt: number }) {
+  const [timeLeft, setTimeLeft] = useState(() =>
+    Math.max(0, 15 - (Date.now() - startedAt) / 1000)
+  )
+
+  useEffect(() => {
+    const tick = () => setTimeLeft(Math.max(0, 15 - (Date.now() - startedAt) / 1000))
+    tick()
+    const id = setInterval(tick, 100)
+    return () => clearInterval(id)
+  }, [startedAt])
+
+  const expired = timeLeft === 0
+
+  return (
+    <motion.div
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.5, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center"
+    >
+      {expired ? (
+        <span
+          className="font-impact text-5xl md:text-6xl uppercase tracking-widest animate-pulse"
+          style={{ color: '#ef4444', textShadow: '0 0 20px rgba(239,68,68,0.8)' }}
+        >
+          TIME!
+        </span>
+      ) : (
+        <span
+          className="font-impact text-6xl md:text-7xl"
+          style={{ color: '#f5c518', textShadow: '0 0 25px rgba(245,197,24,0.9)' }}
+        >
+          {Math.ceil(timeLeft)}
+        </span>
+      )}
+    </motion.div>
+  )
+}
+
 export default function GameBoard({ state }: Props) {
   const prevState = useRef<GameState>(state)
   const [showX, setShowX] = useState(false)
@@ -121,6 +162,11 @@ export default function GameBoard({ state }: Props) {
       <div className="relative flex flex-col gap-4 w-full h-full rounded-2xl overflow-hidden py-6 px-4"
         style={{ background: 'linear-gradient(180deg, #1a3a9a 0%, #0d2060 100%)' }}>
         <DotBorder />
+        <AnimatePresence>
+          {state.timer?.startedAt != null && (
+            <TimerDisplay key={state.timer.startedAt} startedAt={state.timer.startedAt} />
+          )}
+        </AnimatePresence>
         <div className="z-10">
           <ScoreHeader teams={teams} scores={scores} multiplier={multiplier} />
         </div>
@@ -139,6 +185,12 @@ export default function GameBoard({ state }: Props) {
       <div className="relative flex flex-col gap-3 w-full h-full rounded-2xl overflow-hidden py-4 px-4"
         style={{ background: 'linear-gradient(180deg, #1a3a9a 0%, #0d2060 100%)' }}>
         <DotBorder />
+
+        <AnimatePresence>
+          {state.timer?.startedAt != null && (
+            <TimerDisplay key={state.timer.startedAt} startedAt={state.timer.startedAt} />
+          )}
+        </AnimatePresence>
 
         {/* Full-screen X flash on wrong answer */}
         <AnimatePresence>
@@ -222,6 +274,11 @@ export default function GameBoard({ state }: Props) {
       <div className="relative flex flex-col gap-3 w-full h-full rounded-2xl overflow-hidden py-4 px-4"
         style={{ background: 'linear-gradient(180deg, #1a3a9a 0%, #0d2060 100%)' }}>
         <DotBorder />
+        <AnimatePresence>
+          {state.timer?.startedAt != null && (
+            <TimerDisplay key={state.timer.startedAt} startedAt={state.timer.startedAt} />
+          )}
+        </AnimatePresence>
         <div className="z-10">
           <ScoreHeader teams={teams} scores={scores} />
         </div>
