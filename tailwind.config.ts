@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        impact: ['var(--font-oswald)', 'Impact', 'Arial Narrow', 'sans-serif'],
+      },
     },
   },
   plugins: [],
