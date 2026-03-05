@@ -12,13 +12,15 @@ export default function BoardPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    // Initial fetch
+    let isMounted = true
+
     supabase
       .from('familyfeud_games')
       .select('state')
       .eq('code', code)
       .single()
       .then(({ data, error }) => {
+        if (!isMounted) return
         if (error || !data) {
           setError('Game not found. Check the code.')
           return
@@ -26,7 +28,6 @@ export default function BoardPage() {
         setState(data.state as GameState)
       })
 
-    // Realtime subscription
     const channel = supabase
       .channel(`board-${code}`)
       .on(
@@ -39,6 +40,7 @@ export default function BoardPage() {
       .subscribe()
 
     return () => {
+      isMounted = false
       supabase.removeChannel(channel)
     }
   }, [code])

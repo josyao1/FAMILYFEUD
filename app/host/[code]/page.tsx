@@ -12,25 +12,22 @@ import HostRoundEnd from '@/components/host/HostRoundEnd'
 import { setPlayers } from '@/lib/gameActions'
 
 function RosterEditor({ code, state }: { code: string; state: GameState }) {
-  const [editingTeam, setEditingTeam] = useState<0 | 1 | null>(null)
-  const [editingIdx, setEditingIdx] = useState<number | null>(null)
-  const [editValue, setEditValue] = useState('')
-  const [newPlayerInput, setNewPlayerInput] = useState('')
+  const [editing, setEditing] = useState<{ team: 0 | 1; idx: number; value: string } | null>(null)
+  const [addInputs, setAddInputs] = useState<[string, string]>(['', ''])
 
   function startEdit(team: 0 | 1, idx: number) {
-    setEditingTeam(team)
-    setEditingIdx(idx)
-    setEditValue(state.teams[team].players[idx])
+    setEditing({ team, idx, value: state.teams[team].players[idx] })
   }
 
-  async function commitEdit(team: 0 | 1, idx: number) {
-    const name = editValue.trim()
+  async function commitEdit() {
+    if (!editing) return
+    const { team, idx, value } = editing
+    const name = value.trim()
     if (name && name !== state.teams[team].players[idx]) {
       const updated = state.teams[team].players.map((p, i) => i === idx ? name : p)
       await setPlayers(code, state, team, updated)
     }
-    setEditingTeam(null)
-    setEditingIdx(null)
+    setEditing(null)
   }
 
   async function removePlayer(team: 0 | 1, idx: number) {
@@ -39,10 +36,10 @@ function RosterEditor({ code, state }: { code: string; state: GameState }) {
   }
 
   async function addPlayer(team: 0 | 1) {
-    const name = newPlayerInput.trim()
+    const name = addInputs[team].trim()
     if (!name) return
     await setPlayers(code, state, team, [...state.teams[team].players, name])
-    setNewPlayerInput('')
+    setAddInputs(prev => { const n = [...prev] as [string, string]; n[team] = ''; return n })
   }
 
   return (
@@ -53,14 +50,14 @@ function RosterEditor({ code, state }: { code: string; state: GameState }) {
             <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">{state.teams[i].name}</p>
             {state.teams[i].players.map((p, idx) => (
               <div key={idx} className="flex items-center gap-1">
-                {editingTeam === i && editingIdx === idx ? (
+                {editing?.team === i && editing?.idx === idx ? (
                   <input
                     autoFocus
                     className="flex-1 bg-gray-700 text-white text-sm rounded px-2 py-1 focus:outline-none focus:border-yellow-400 border border-yellow-400"
-                    value={editValue}
-                    onChange={e => setEditValue(e.target.value)}
-                    onBlur={() => commitEdit(i, idx)}
-                    onKeyDown={e => { if (e.key === 'Enter') commitEdit(i, idx) }}
+                    value={editing.value}
+                    onChange={e => setEditing(prev => prev ? { ...prev, value: e.target.value } : prev)}
+                    onBlur={commitEdit}
+                    onKeyDown={e => { if (e.key === 'Enter') commitEdit() }}
                   />
                 ) : (
                   <button
@@ -80,8 +77,8 @@ function RosterEditor({ code, state }: { code: string; state: GameState }) {
               <input
                 className="flex-1 bg-gray-800 text-white text-sm border border-gray-600 rounded px-2 py-1 focus:outline-none focus:border-yellow-400"
                 placeholder="Add player..."
-                value={editingTeam === i && editingIdx === null ? newPlayerInput : ''}
-                onChange={e => { setEditingTeam(i); setEditingIdx(null); setNewPlayerInput(e.target.value) }}
+                value={addInputs[i]}
+                onChange={e => setAddInputs(prev => { const n = [...prev] as [string, string]; n[i] = e.target.value; return n })}
                 onKeyDown={e => { if (e.key === 'Enter') addPlayer(i) }}
               />
               <button
@@ -103,12 +100,15 @@ export default function HostPage() {
   const [showRoster, setShowRoster] = useState(false)
 
   useEffect(() => {
+    let isMounted = true
+
     supabase
       .from('familyfeud_games')
       .select('state')
       .eq('code', code)
       .single()
       .then(({ data, error }) => {
+        if (!isMounted) return
         if (error || !data) {
           setError('Game not found.')
           return
@@ -128,6 +128,7 @@ export default function HostPage() {
       .subscribe()
 
     return () => {
+      isMounted = false
       supabase.removeChannel(channel)
     }
   }, [code])

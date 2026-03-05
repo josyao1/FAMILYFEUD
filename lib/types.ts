@@ -25,7 +25,7 @@ export type GameState = {
   usedQuestionIds: string[]
   currentQuestion: Question | null
   board: {
-    answers: Array<{ text: string; points: number; revealed: boolean }>
+    answers: Array<Answer & { revealed: boolean }>
     strikes: number
     playingTeam: 0 | 1
     roundPoints: number

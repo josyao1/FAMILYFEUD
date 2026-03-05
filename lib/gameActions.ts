@@ -53,6 +53,31 @@ function nextIndex(current: number, length: number): number {
   return (current + 1) % length
 }
 
+function oppositeTeam(team: 0 | 1): 0 | 1 {
+  return team === 0 ? 1 : 0
+}
+
+function makeRoundState(question: Question) {
+  return {
+    board: {
+      answers: question.answers.map(a => ({ ...a, revealed: false })),
+      strikes: 0,
+      playingTeam: 0 as 0 | 1,
+      roundPoints: 0,
+      guesserIndex: 0,
+    },
+    faceoff: {
+      team0Answer: null,
+      team0Rank: null,
+      team1Answer: null,
+      team1Rank: null,
+      winnerTeam: null as 0 | 1 | null,
+      decision: null as 'pass' | 'play' | null,
+    },
+    steal: { stealingTeam: null as 0 | 1 | null },
+  }
+}
+
 export async function setTeamName(code: string, state: GameState, team: 0 | 1, name: string) {
   const newTeams: [Team, Team] = [
     { ...state.teams[0], name: team === 0 ? name : state.teams[0].name },
@@ -82,22 +107,7 @@ export async function startFaceoff(code: string, state: GameState, questionId?: 
     ...state,
     phase: 'faceoff',
     currentQuestion: question,
-    board: {
-      answers: question.answers.map(a => ({ ...a, revealed: false })),
-      strikes: 0,
-      playingTeam: 0,
-      roundPoints: 0,
-      guesserIndex: 0,
-    },
-    faceoff: {
-      team0Answer: null,
-      team0Rank: null,
-      team1Answer: null,
-      team1Rank: null,
-      winnerTeam: null,
-      decision: null,
-    },
-    steal: { stealingTeam: null },
+    ...makeRoundState(question),
   }
   await updateState(code, newState)
 }
@@ -219,7 +229,7 @@ export async function addStrike(code: string, state: GameState) {
   }
 
   if (strikes >= 3) {
-    const stealingTeam: 0 | 1 = playingTeam === 0 ? 1 : 0
+    const stealingTeam = oppositeTeam(playingTeam)
     await updateState(code, { ...newState, phase: 'steal', steal: { stealingTeam } })
   } else {
     await updateState(code, newState)
@@ -227,7 +237,7 @@ export async function addStrike(code: string, state: GameState) {
 }
 
 export async function offerSteal(code: string, state: GameState) {
-  const stealingTeam: 0 | 1 = state.board.playingTeam === 0 ? 1 : 0
+  const stealingTeam = oppositeTeam(state.board.playingTeam)
   await updateState(code, {
     ...state,
     phase: 'steal',
@@ -307,22 +317,7 @@ export async function nextRound(code: string, state: GameState, multiplier: 1 | 
     usedQuestionIds,
     teams: newTeams,
     currentQuestion: question,
-    board: {
-      answers: question.answers.map(a => ({ ...a, revealed: false })),
-      strikes: 0,
-      playingTeam: 0,
-      roundPoints: 0,
-      guesserIndex: 0,
-    },
-    faceoff: {
-      team0Answer: null,
-      team0Rank: null,
-      team1Answer: null,
-      team1Rank: null,
-      winnerTeam: null,
-      decision: null,
-    },
-    steal: { stealingTeam: null },
+    ...makeRoundState(question),
   })
 }
 

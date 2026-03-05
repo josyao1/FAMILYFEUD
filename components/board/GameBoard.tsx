@@ -65,6 +65,7 @@ function PointsCounter({ points }: { points: number }) {
 export default function GameBoard({ state }: Props) {
   const prevState = useRef<GameState>(state)
   const [showX, setShowX] = useState(false)
+  const xTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const prev = prevState.current
@@ -80,7 +81,8 @@ export default function GameBoard({ state }: Props) {
     if (curr.board.strikes > prev.board.strikes) {
       playSound('wrong')
       setShowX(true)
-      setTimeout(() => setShowX(false), 1800)
+      if (xTimerRef.current) clearTimeout(xTimerRef.current)
+      xTimerRef.current = setTimeout(() => setShowX(false), 1800)
     }
 
     if (curr.phase === 'steal' && prev.phase !== 'steal') playSound('steal')
@@ -88,6 +90,10 @@ export default function GameBoard({ state }: Props) {
 
     prevState.current = curr
   }, [state])
+
+  useEffect(() => {
+    return () => { if (xTimerRef.current) clearTimeout(xTimerRef.current) }
+  }, [])
 
   const { phase, teams, scores, board, currentQuestion, multiplier } = state
 
