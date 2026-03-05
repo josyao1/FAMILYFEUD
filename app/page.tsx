@@ -41,6 +41,24 @@ export default function Home() {
         <p className="text-gray-400 text-lg mt-2">Survey says... let&apos;s play!</p>
       </div>
 
+      {/* How to play */}
+      <div className="w-full max-w-sm flex flex-col gap-2 text-sm">
+        <div className="flex items-start gap-3 bg-gray-800/60 rounded-xl px-4 py-3">
+          <span className="text-2xl leading-none mt-0.5">📱</span>
+          <div>
+            <p className="text-yellow-400 font-bold">Host phone</p>
+            <p className="text-gray-300">Tap <span className="text-white font-semibold">Create New Game</span> — you&apos;ll control the whole game from this phone.</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3 bg-gray-800/60 rounded-xl px-4 py-3">
+          <span className="text-2xl leading-none mt-0.5">📺</span>
+          <div>
+            <p className="text-yellow-400 font-bold">Big screen</p>
+            <p className="text-gray-300">On the TV or laptop, enter the 6-digit code below and tap <span className="text-white font-semibold">Board →</span> to show the game board.</p>
+          </div>
+        </div>
+      </div>
+
       <div className="w-full max-w-sm flex flex-col gap-4">
         <button
           onClick={handleCreateGame}
