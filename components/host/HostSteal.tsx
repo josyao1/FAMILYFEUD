@@ -12,26 +12,39 @@ type Props = {
 export default function HostSteal({ code, state }: Props) {
   const { steal, teams, board, currentQuestion } = state
   const [loading, setLoading] = useState(false)
-  const [tileRevealed, setTileRevealed] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const stealingTeam = steal.stealingTeam
+  const tileRevealed = steal.tileRevealed
 
   async function handleRevealTile(index: number) {
     if (board.answers[index].revealed) return
     setLoading(true)
-    await revealStealAnswer(code, state, index)
-    setTileRevealed(true)
-    setLoading(false)
+    setError(null)
+    try {
+      await revealStealAnswer(code, state, index)
+    } catch {
+      setError('Failed to reveal tile.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function handleResolve(correct: boolean) {
     setLoading(true)
-    await resolveSteal(code, state, correct)
-    setLoading(false)
+    setError(null)
+    try {
+      await resolveSteal(code, state, correct)
+    } catch {
+      setError('Failed to resolve steal.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="flex flex-col gap-4 p-4">
+      {error && <p className="text-red-400 text-sm text-center bg-red-900/30 rounded-lg px-3 py-2">{error}</p>}
       <h2 className="text-yellow-400 font-bold text-lg">STEAL</h2>
 
       <div className="bg-gray-800 rounded-lg p-3">
@@ -77,10 +90,11 @@ export default function HostSteal({ code, state }: Props) {
             </button>
           ))}
           <button
-            onClick={() => setTileRevealed(true)}
-            className="w-full py-2 bg-gray-700 text-gray-400 text-sm rounded-lg active:scale-95 mt-1"
+            onClick={() => handleResolve(false)}
+            disabled={loading}
+            className="w-full py-2 bg-gray-700 text-gray-400 text-sm rounded-lg active:scale-95 mt-1 disabled:opacity-50"
           >
-            Answer wasn&apos;t on board →
+            Answer wasn&apos;t on board — Award to {stealingTeam !== null ? teams[stealingTeam === 0 ? 1 : 0].name : 'playing team'}
           </button>
         </div>
       )}

@@ -9,7 +9,8 @@ import HostFaceoff from '@/components/host/HostFaceoff'
 import HostPlaying from '@/components/host/HostPlaying'
 import HostSteal from '@/components/host/HostSteal'
 import HostRoundEnd from '@/components/host/HostRoundEnd'
-import { setPlayers, startTimer, resetTimer } from '@/lib/gameActions'
+import { setPlayers, startTimer, resetTimer, clearScores } from '@/lib/gameActions'
+import { SpinningNumber } from '@/components/SpinningNumber'
 
 function RosterEditor({ code, state }: { code: string; state: GameState }) {
   const [editing, setEditing] = useState<{ team: 0 | 1; idx: number; value: string } | null>(null)
@@ -23,23 +24,28 @@ function RosterEditor({ code, state }: { code: string; state: GameState }) {
     if (!editing) return
     const { team, idx, value } = editing
     const name = value.trim()
+    setEditing(null)
     if (name && name !== state.teams[team].players[idx]) {
       const updated = state.teams[team].players.map((p, i) => i === idx ? name : p)
-      await setPlayers(code, state, team, updated)
+      try { await setPlayers(code, state, team, updated) } catch { console.error('Failed to update roster') }
     }
-    setEditing(null)
   }
 
   async function removePlayer(team: 0 | 1, idx: number) {
     const updated = state.teams[team].players.filter((_, i) => i !== idx)
-    await setPlayers(code, state, team, updated)
+    try { await setPlayers(code, state, team, updated) } catch { console.error('Failed to remove player') }
   }
 
   async function addPlayer(team: 0 | 1) {
     const name = addInputs[team].trim()
     if (!name) return
-    await setPlayers(code, state, team, [...state.teams[team].players, name])
     setAddInputs(prev => { const n = [...prev] as [string, string]; n[team] = ''; return n })
+    try {
+      await setPlayers(code, state, team, [...state.teams[team].players, name])
+    } catch {
+      console.error('Failed to add player')
+      setAddInputs(prev => { const n = [...prev] as [string, string]; n[team] = name; return n })
+    }
   }
 
   return (
@@ -199,29 +205,40 @@ export default function HostPage() {
             }}
           >
             <span className="text-gray-300 text-sm truncate">{state.teams[i].name}</span>
-            <span className="text-yellow-400 font-bold text-lg ml-2">{state.scores[i]}</span>
+            <SpinningNumber value={state.scores[i]} className="text-yellow-400 font-bold text-lg ml-2" />
           </div>
         ))}
+        <button
+          onClick={async () => {
+            if (confirm('Reset both scores to 0?')) {
+              try { await clearScores(code, state) } catch { alert('Failed to reset scores.') }
+            }
+          }}
+          className="text-xs px-2 py-1 rounded border border-gray-700 text-gray-500 hover:border-red-500 hover:text-red-400 transition-colors self-center"
+          title="Clear scores"
+        >
+          ↺
+        </button>
         {state.multiplier === 2 && (
           <span className="text-yellow-400 font-bold self-center text-sm">2×</span>
         )}
         {timeLeft === null ? (
           <button
-            onClick={() => startTimer(code, state)}
+            onClick={() => startTimer(code, state).catch(console.error)}
             className="text-xs px-3 py-1 rounded-full border border-gray-600 text-gray-400 hover:border-yellow-400 hover:text-yellow-400 transition-colors self-center"
           >
             ⏱ 15s
           </button>
         ) : timeLeft === 0 ? (
           <button
-            onClick={() => resetTimer(code, state)}
+            onClick={() => resetTimer(code, state).catch(console.error)}
             className="text-xs px-3 py-1 rounded-full border border-red-500 text-red-400 animate-pulse self-center"
           >
             ✕ TIME
           </button>
         ) : (
           <button
-            onClick={() => resetTimer(code, state)}
+            onClick={() => resetTimer(code, state).catch(console.error)}
             className="text-xs px-3 py-1 rounded-full border border-yellow-500 text-yellow-400 self-center"
           >
             ✕ {Math.ceil(timeLeft)}s

@@ -73,10 +73,15 @@ export default function HostLobby({ code, state }: Props) {
     state.teams[1].players,
   ])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   async function handleNameBlur(i: 0 | 1) {
     if (teamNames[i] !== state.teams[i].name) {
-      await setTeamName(code, state, i, teamNames[i])
+      try {
+        await setTeamName(code, state, i, teamNames[i])
+      } catch {
+        setError('Failed to update team name.')
+      }
     }
   }
 
@@ -84,17 +89,28 @@ export default function HostLobby({ code, state }: Props) {
     const newLists = [...playerLists]
     newLists[i] = players
     setPlayerLists(newLists)
-    await setPlayers(code, state, i, players)
+    try {
+      await setPlayers(code, state, i, players)
+    } catch {
+      setError('Failed to update players.')
+    }
   }
 
   async function handleStart() {
     setLoading(true)
-    await startFaceoff(code, state)
-    setLoading(false)
+    setError(null)
+    try {
+      await startFaceoff(code, state)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to start game.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="flex flex-col gap-5 p-4">
+      {error && <p className="text-red-400 text-sm text-center bg-red-900/30 rounded-lg px-3 py-2">{error}</p>}
       <h2 className="text-yellow-400 font-bold text-xl text-center">LOBBY</h2>
 
       {([0, 1] as const).map(i => (

@@ -21,6 +21,7 @@ export function getInitialState(): GameState {
     multiplier: 1,
     usedQuestionIds: [],
     currentQuestion: null,
+    questionRevealed: false,
     board: {
       answers: [],
       strikes: 0,
@@ -38,6 +39,7 @@ export function getInitialState(): GameState {
     },
     steal: {
       stealingTeam: null,
+      tileRevealed: false,
     },
     timer: {
       startedAt: null,
@@ -77,7 +79,7 @@ function makeRoundState(question: Question) {
       winnerTeam: null as 0 | 1 | null,
       decision: null as 'pass' | 'play' | null,
     },
-    steal: { stealingTeam: null as 0 | 1 | null },
+    steal: { stealingTeam: null as 0 | 1 | null, tileRevealed: false },
   }
 }
 
@@ -104,12 +106,13 @@ export async function startFaceoff(code: string, state: GameState, questionId?: 
   } else {
     question = pickQuestion(state.usedQuestionIds)
   }
-  if (!question) return
+  if (!question) throw new Error('No questions available')
 
   const newState: GameState = {
     ...state,
     phase: 'faceoff',
     currentQuestion: question,
+    questionRevealed: false,
     ...makeRoundState(question),
   }
   await updateState(code, newState)
@@ -173,7 +176,8 @@ export async function faceoffDecision(
   state: GameState,
   decision: 'pass' | 'play'
 ) {
-  const winner = state.faceoff.winnerTeam!
+  if (state.faceoff.winnerTeam === null) throw new Error('No faceoff winner set')
+  const winner = state.faceoff.winnerTeam
   const playingTeam: 0 | 1 = decision === 'play' ? winner : ((1 - winner) as 0 | 1)
 
   // First guesser is the player AFTER the faceoff player on the playing team
@@ -233,7 +237,7 @@ export async function addStrike(code: string, state: GameState) {
 
   if (strikes >= 3) {
     const stealingTeam = oppositeTeam(playingTeam)
-    await updateState(code, { ...newState, phase: 'steal', steal: { stealingTeam } })
+    await updateState(code, { ...newState, phase: 'steal', steal: { stealingTeam, tileRevealed: false } })
   } else {
     await updateState(code, newState)
   }
@@ -244,12 +248,13 @@ export async function offerSteal(code: string, state: GameState) {
   await updateState(code, {
     ...state,
     phase: 'steal',
-    steal: { stealingTeam },
+    steal: { stealingTeam, tileRevealed: false },
   })
 }
 
 export async function resolveSteal(code: string, state: GameState, correct: boolean) {
-  const stealingTeam = state.steal.stealingTeam!
+  if (state.steal.stealingTeam === null) throw new Error('No stealing team set')
+  const stealingTeam = state.steal.stealingTeam
   const playingTeam = state.board.playingTeam
   const winningTeam = correct ? stealingTeam : playingTeam
   const points = state.board.roundPoints * state.multiplier
@@ -273,10 +278,15 @@ export async function revealStealAnswer(code: string, state: GameState, answerIn
   )
   const addedPoints = state.board.answers[answerIndex].points
   const roundPoints = state.board.roundPoints + addedPoints
-  await updateState(code, { ...state, board: { ...state.board, answers, roundPoints } })
+  await updateState(code, {
+    ...state,
+    board: { ...state.board, answers, roundPoints },
+    steal: { ...state.steal, tileRevealed: true },
+  })
 }
 
 export async function endRound(code: string, state: GameState) {
+  if (state.phase !== 'playing') return
   const points = state.board.roundPoints * state.multiplier
   const playingTeam = state.board.playingTeam
   const newScores: [number, number] = [...state.scores] as [number, number]
@@ -320,6 +330,7 @@ export async function nextRound(code: string, state: GameState, multiplier: 1 | 
     usedQuestionIds,
     teams: newTeams,
     currentQuestion: question,
+    questionRevealed: false,
     ...makeRoundState(question),
   })
 }
@@ -334,4 +345,28 @@ export async function startTimer(code: string, state: GameState) {
 
 export async function resetTimer(code: string, state: GameState) {
   await updateState(code, { ...state, timer: { startedAt: null } })
+}
+
+export async function clearScores(code: string, state: GameState) {
+  await updateState(code, { ...state, scores: [0, 0] })
+}
+
+export async function revealQuestion(code: string, state: GameState) {
+  await updateState(code, { ...state, questionRevealed: true })
+}
+
+export async function editAnswer(code: string, state: GameState, answerIndex: number, newText: string) {
+  if (answerIndex < 0 || answerIndex >= state.board.answers.length) return
+  const answers = state.board.answers.map((a, i) =>
+    i === answerIndex ? { ...a, text: newText } : a
+  )
+  const currentQuestion = state.currentQuestion
+    ? {
+        ...state.currentQuestion,
+        answers: state.currentQuestion.answers.map((a, i) =>
+          i === answerIndex ? { ...a, text: newText } : a
+        ),
+      }
+    : state.currentQuestion
+  await updateState(code, { ...state, board: { ...state.board, answers }, currentQuestion })
 }

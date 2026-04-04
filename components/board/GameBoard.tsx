@@ -104,32 +104,32 @@ function TimerDisplay({ startedAt }: { startedAt: number }) {
 }
 
 export default function GameBoard({ state }: Props) {
-  const prevState = useRef<GameState>(state)
+  const prevRevealCount = useRef(state.board.answers.filter(a => a.revealed).length)
+  const prevStrikes = useRef(state.board.strikes)
+  const prevPhase = useRef(state.phase)
   const [showX, setShowX] = useState(false)
   const xTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    const prev = prevState.current
-    const curr = state
+    const revealCount = state.board.answers.filter(a => a.revealed).length
 
-    if (curr.board.answers.length > 0 && prev.board.answers.length > 0) {
-      const newReveal = curr.board.answers.some(
-        (a, i) => a.revealed && !prev.board.answers[i]?.revealed
-      )
-      if (newReveal) playSound('ding')
+    if (revealCount > prevRevealCount.current) {
+      playSound('ding')
     }
+    prevRevealCount.current = revealCount
 
-    if (curr.board.strikes > prev.board.strikes) {
+    if (state.board.strikes > prevStrikes.current) {
       playSound('wrong')
       setShowX(true)
       if (xTimerRef.current) clearTimeout(xTimerRef.current)
       xTimerRef.current = setTimeout(() => setShowX(false), 1800)
     }
+    prevStrikes.current = state.board.strikes
 
-    if (curr.phase === 'steal' && prev.phase !== 'steal') playSound('steal')
-    if (curr.phase === 'roundend' && prev.phase !== 'roundend') playSound('roundWin')
+    if (state.phase === 'steal' && prevPhase.current !== 'steal') playSound('steal')
+    if (state.phase === 'roundend' && prevPhase.current !== 'roundend') playSound('roundWin')
+    prevPhase.current = state.phase
 
-    prevState.current = curr
   }, [state])
 
   useEffect(() => {

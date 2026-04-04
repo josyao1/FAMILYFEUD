@@ -1,4 +1,7 @@
+'use client'
+
 import { Team } from '@/lib/types'
+import { SpinningNumber } from '@/components/SpinningNumber'
 
 type Props = {
   teams: [Team, Team]
@@ -35,12 +38,11 @@ export default function ScoreHeader({ teams, scores, playingTeam, multiplier, gu
             <span className="text-white font-impact text-sm md:text-base uppercase tracking-widest">
               {teams[i].name}
             </span>
-            <span
+            <SpinningNumber
+              value={scores[i]}
               className="font-impact text-3xl md:text-4xl leading-tight"
               style={{ color: '#f5c518', textShadow: '0 0 12px rgba(245,197,24,0.7)' }}
-            >
-              {scores[i]}
-            </span>
+            />
             {currentGuesser && (
               <span className="text-yellow-200 font-impact text-sm md:text-base mt-1 animate-pulse">
                 {currentGuesser}

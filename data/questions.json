@@ -499,7 +499,7 @@
   },
   {
     "id": "q016",
-    "question": "Name a good gift for the &x22;Outdoors&x22; type",
+    "question": "Name a good gift for the \"Outdoors\" type",
     "answers": [
       {
         "text": "Fishing Rod",
@@ -1151,7 +1151,7 @@
   },
   {
     "id": "q036",
-    "question": "Besides &x22;King&x22; & &x22;Queen,&x22; name a title some people have in England",
+    "question": "Besides \"King\" & \"Queen,\" name a title some people have in England",
     "answers": [
       {
         "text": "Prince",
@@ -3303,7 +3303,7 @@
   },
   {
     "id": "q102",
-    "question": "Name a place where people &x22;Check In&x22;",
+    "question": "Name a place where people \"Check In\"",
     "answers": [
       {
         "text": "Hotel",
@@ -3453,7 +3453,7 @@
   },
   {
     "id": "q107",
-    "question": "Name a phrase that has the word &x22;Easter&x22; in it",
+    "question": "Name a phrase that has the word \"Easter\" in it",
     "answers": [
       {
         "text": "Easter Bunny",
@@ -3589,7 +3589,7 @@
   },
   {
     "id": "q111",
-    "question": "Name an occupation that begins with the letter &x22;B&x22;",
+    "question": "Name an occupation that begins with the letter \"B\"",
     "answers": [
       {
         "text": "Baker",
@@ -4189,7 +4189,7 @@
   },
   {
     "id": "q129",
-    "question": "Give me a word with the word. &x22;Under&x22; in it",
+    "question": "Give me a word with the word. \"Under\" in it",
     "answers": [
       {
         "text": "Underwear",
@@ -4223,7 +4223,7 @@
   },
   {
     "id": "q130",
-    "question": "Name a sport whose players might have &x22;Pot Bellies&x22;",
+    "question": "Name a sport whose players might have \"Pot Bellies\"",
     "answers": [
       {
         "text": "Wrestling",
@@ -5127,7 +5127,7 @@
   },
   {
     "id": "q158",
-    "question": "Name a television show with the word &x22;Family&x22; in it",
+    "question": "Name a television show with the word \"Family\" in it",
     "answers": [
       {
         "text": "Family Ties",
@@ -5214,7 +5214,7 @@
         "points": 7
       },
       {
-        "text": "Michael Bubl\u00e9",
+        "text": "Michael Bublé",
         "points": 6
       },
       {
@@ -5489,7 +5489,7 @@
   },
   {
     "id": "q169",
-    "question": "Give me a word or term with &x22;Sand&x22; in it",
+    "question": "Give me a word or term with \"Sand\" in it",
     "answers": [
       {
         "text": "Sandwich",
@@ -6029,7 +6029,7 @@
   },
   {
     "id": "q185",
-    "question": "Name something you eat that starts with the word &x22;Corn&x22;",
+    "question": "Name something you eat that starts with the word \"Corn\"",
     "answers": [
       {
         "text": "Corn Dog",
@@ -6757,7 +6757,7 @@
   },
   {
     "id": "q207",
-    "question": "Past or present, real or fictional, name a famous &x22;Andy&x22;",
+    "question": "Past or present, real or fictional, name a famous \"Andy\"",
     "answers": [
       {
         "text": "Andy Giffith",
@@ -7433,7 +7433,7 @@
   },
   {
     "id": "q227",
-    "question": "Name a famous &x22;Tom&x22;",
+    "question": "Name a famous \"Tom\"",
     "answers": [
       {
         "text": "Tom Selleck",
@@ -8215,7 +8215,7 @@
   },
   {
     "id": "q250",
-    "question": "Name an American city that begins with the letter &x22;S&x22;",
+    "question": "Name an American city that begins with the letter \"S\"",
     "answers": [
       {
         "text": "San Francisco",
@@ -9053,7 +9053,7 @@
   },
   {
     "id": "q275",
-    "question": "Name a &x22;Blonde Bombshell&x22; of today",
+    "question": "Name a \"Blonde Bombshell\" of today",
     "answers": [
       {
         "text": "Loni Anderson",
@@ -9705,7 +9705,7 @@
   },
   {
     "id": "q295",
-    "question": "Tell me the name of something that starts with the word &x22;French&x22;",
+    "question": "Tell me the name of something that starts with the word \"French\"",
     "answers": [
       {
         "text": "French Fries",
@@ -9837,7 +9837,7 @@
   },
   {
     "id": "q299",
-    "question": "Name something in a store that might have a sign that says &x22;Fresh&x22; on it",
+    "question": "Name something in a store that might have a sign that says \"Fresh\" on it",
     "answers": [
       {
         "text": "Produce",
@@ -11907,7 +11907,7 @@
   },
   {
     "id": "q367",
-    "question": "Name a famous character with &x22;Kid&x22; in his name",
+    "question": "Name a famous character with \"Kid\" in his name",
     "answers": [
       {
         "text": "Billy The Kid",
@@ -11959,7 +11959,7 @@
   },
   {
     "id": "q369",
-    "question": "Name a &x22;Thinking man's game&x22;",
+    "question": "Name a \"Thinking man's game\"",
     "answers": [
       {
         "text": "Chess",
@@ -12497,7 +12497,7 @@
   },
   {
     "id": "q388",
-    "question": "What do many young husbands promise they'll get their wives &x22;Someday&x22;?",
+    "question": "What do many young husbands promise they'll get their wives \"Someday\"?",
     "answers": [
       {
         "text": "House",
@@ -15601,7 +15601,7 @@
   },
   {
     "id": "q500",
-    "question": "Name a decision people won't make until they &x22;Sleep on it&x22;",
+    "question": "Name a decision people won't make until they \"Sleep on it\"",
     "answers": [
       {
         "text": "New Car",
@@ -15773,7 +15773,7 @@
   },
   {
     "id": "q506",
-    "question": "Name a phrase that has the word &x22;United&x22; in it",
+    "question": "Name a phrase that has the word \"United\" in it",
     "answers": [
       {
         "text": "United States",
@@ -15915,7 +15915,7 @@
   },
   {
     "id": "q511",
-    "question": "Name an appropriate occupation for a &x22;Good Samaritan&x22;",
+    "question": "Name an appropriate occupation for a \"Good Samaritan\"",
     "answers": [
       {
         "text": "Nurse",
@@ -16161,7 +16161,7 @@
   },
   {
     "id": "q520",
-    "question": "Name something that people &x22;Pull up&x22;",
+    "question": "Name something that people \"Pull up\"",
     "answers": [
       {
         "text": "Pants",
@@ -16639,7 +16639,7 @@
   },
   {
     "id": "q537",
-    "question": "Name something people buy that comes in &x22;Stick&x22; form",
+    "question": "Name something people buy that comes in \"Stick\" form",
     "answers": [
       {
         "text": "Gun",
@@ -16665,7 +16665,7 @@
   },
   {
     "id": "q538",
-    "question": "Name an instrument in a real &x22;Hillbilly&x22; band",
+    "question": "Name an instrument in a real \"Hillbilly\" band",
     "answers": [
       {
         "text": "Banjo",
@@ -18411,7 +18411,7 @@
   },
   {
     "id": "q601",
-    "question": "Name someone to whom kids tell &x22;Little white lies&x22;",
+    "question": "Name someone to whom kids tell \"Little white lies\"",
     "answers": [
       {
         "text": "Parents",
@@ -19037,7 +19037,7 @@
   },
   {
     "id": "q624",
-    "question": "Give me another word for an &x22;Informer&x22;",
+    "question": "Give me another word for an \"Informer\"",
     "answers": [
       {
         "text": "Snitch",
@@ -19783,7 +19783,7 @@
   },
   {
     "id": "q651",
-    "question": "Name a special &x22;Perk&x22; that executives often enjoy",
+    "question": "Name a special \"Perk\" that executives often enjoy",
     "answers": [
       {
         "text": "Company Car",
@@ -20115,7 +20115,7 @@
   },
   {
     "id": "q663",
-    "question": "Name something you'd order &x22;Well done&x22; in a restaurant",
+    "question": "Name something you'd order \"Well done\" in a restaurant",
     "answers": [
       {
         "text": "Steak",
@@ -21265,7 +21265,7 @@
   },
   {
     "id": "q704",
-    "question": "What might people be talking about if you overhear the word &x22;Moose&x22;?",
+    "question": "What might people be talking about if you overhear the word \"Moose\"?",
     "answers": [
       {
         "text": "Hunting",
@@ -22895,7 +22895,7 @@
   },
   {
     "id": "q763",
-    "question": "Name something that every state has an &x22;Official&x22; one of",
+    "question": "Name something that every state has an \"Official\" one of",
     "answers": [
       {
         "text": "Flower",
@@ -23007,7 +23007,7 @@
   },
   {
     "id": "q767",
-    "question": "Name something you eat that starts with the word &x22;Rice&x22;",
+    "question": "Name something you eat that starts with the word \"Rice\"",
     "answers": [
       {
         "text": "Rice Pudding",
@@ -23767,7 +23767,7 @@
   },
   {
     "id": "q795",
-    "question": "Past or present, name someone famous whose first name is &x22;Carol&x22;",
+    "question": "Past or present, name someone famous whose first name is \"Carol\"",
     "answers": [
       {
         "text": "Carol Burnett",
@@ -24347,7 +24347,7 @@
   },
   {
     "id": "q817",
-    "question": "Name something people use at night that contains the word &x22;Night&x22;",
+    "question": "Name something people use at night that contains the word \"Night\"",
     "answers": [
       {
         "text": "Night Light",
@@ -25161,7 +25161,7 @@
   },
   {
     "id": "q852",
-    "question": "Name a place that begins with the word &x22;North&x22;",
+    "question": "Name a place that begins with the word \"North\"",
     "answers": [
       {
         "text": "North Pole",
@@ -25363,7 +25363,7 @@
   },
   {
     "id": "q861",
-    "question": "Name a saying like &x22;Purple with rage,&x22; that contains a color",
+    "question": "Name a saying like \"Purple with rage,\" that contains a color",
     "answers": [
       {
         "text": "Green With Envy",
@@ -25673,7 +25673,7 @@
   },
   {
     "id": "q874",
-    "question": "Give me another word for &x22;Nonsense&x22;",
+    "question": "Give me another word for \"Nonsense\"",
     "answers": [
       {
         "text": "Silly",
@@ -26047,7 +26047,7 @@
   },
   {
     "id": "q891",
-    "question": "From the comic strip &x22;Peanuts,&x22; name something the red baron wears",
+    "question": "From the comic strip \"Peanuts,\" name something the red baron wears",
     "answers": [
       {
         "text": "Scarf",
@@ -26421,7 +26421,7 @@
   },
   {
     "id": "q908",
-    "question": "Name a sport in which you would hear the word &x22;Stroke&x22;",
+    "question": "Name a sport in which you would hear the word \"Stroke\"",
     "answers": [
       {
         "text": "Golf",
@@ -27349,7 +27349,7 @@
   },
   {
     "id": "q950",
-    "question": "Name a city where people go for a &x22;Quickie&x22; divorce",
+    "question": "Name a city where people go for a \"Quickie\" divorce",
     "answers": [
       {
         "text": "Reno",
@@ -28109,7 +28109,7 @@
   },
   {
     "id": "q984",
-    "question": "Name a specific food people like to buy &x22;Fresh&x22; from the farm",
+    "question": "Name a specific food people like to buy \"Fresh\" from the farm",
     "answers": [
       {
         "text": "Eggs",
@@ -28495,7 +28495,7 @@
   },
   {
     "id": "q1001",
-    "question": "Name a nursery rhyme that has the word &x22;Old&x22; in its title",
+    "question": "Name a nursery rhyme that has the word \"Old\" in its title",
     "answers": [
       {
         "text": "Old Mother Husband",
@@ -29643,7 +29643,7 @@
   },
   {
     "id": "q1051",
-    "question": "Name someone from the bible whose name starts with the letter &x22;M&x22;",
+    "question": "Name someone from the bible whose name starts with the letter \"M\"",
     "answers": [
       {
         "text": "Moses",
@@ -29665,7 +29665,7 @@
   },
   {
     "id": "q1052",
-    "question": "In only one word, how do you think people answer &x22;How do you feel?&x22;",
+    "question": "In only one word, how do you think people answer \"How do you feel?\"",
     "answers": [
       {
         "text": "Fine",
@@ -29753,7 +29753,7 @@
   },
   {
     "id": "q1056",
-    "question": "Name something about which a man says &x22;It's my whole life&x22;",
+    "question": "Name something about which a man says \"It's my whole life\"",
     "answers": [
       {
         "text": "Job",
@@ -29915,7 +29915,7 @@
   },
   {
     "id": "q1063",
-    "question": "Name an item people buy for the beach that contains the word &x22;Beach&x22;",
+    "question": "Name an item people buy for the beach that contains the word \"Beach\"",
     "answers": [
       {
         "text": "Beach Ball",
@@ -30433,7 +30433,7 @@
   },
   {
     "id": "q1086",
-    "question": "Name someone famous whose last name is &x22;Marx&x22;",
+    "question": "Name someone famous whose last name is \"Marx\"",
     "answers": [
       {
         "text": "Groucho",
@@ -31085,7 +31085,7 @@
   },
   {
     "id": "q1114",
-    "question": "Name a &x22;Boy's activity&x22; that tomboys like to do",
+    "question": "Name a \"Boy's activity\" that tomboys like to do",
     "answers": [
       {
         "text": "Play Sports",
@@ -31559,7 +31559,7 @@
   },
   {
     "id": "q1135",
-    "question": "Give me a word or phrase containing the word &x22;Bed&x22;",
+    "question": "Give me a word or phrase containing the word \"Bed\"",
     "answers": [
       {
         "text": "Bedroom",
@@ -31963,7 +31963,7 @@
   },
   {
     "id": "q1153",
-    "question": "What might a polite person say instead of &x22;Huh?&x22;",
+    "question": "What might a polite person say instead of \"Huh?\"",
     "answers": [
       {
         "text": "Excuse Me",
@@ -31985,7 +31985,7 @@
   },
   {
     "id": "q1154",
-    "question": "Name a character from the TV show &x22;The Jetsons&x22;",
+    "question": "Name a character from the TV show \"The Jetsons\"",
     "answers": [
       {
         "text": "George",
@@ -32147,7 +32147,7 @@
   },
   {
     "id": "q1161",
-    "question": "Name something people do before they yell &x22;Surprise&x22; at a party",
+    "question": "Name something people do before they yell \"Surprise\" at a party",
     "answers": [
       {
         "text": "Turn Out Lights",
@@ -32423,7 +32423,7 @@
   },
   {
     "id": "q1173",
-    "question": "Name a subject that people talk about when they make &x22;Small talk&x22;",
+    "question": "Name a subject that people talk about when they make \"Small talk\"",
     "answers": [
       {
         "text": "Weather",
@@ -32541,7 +32541,7 @@
   },
   {
     "id": "q1178",
-    "question": "Name a real or fictional person with &x22;Grant&x22; in his or her name",
+    "question": "Name a real or fictional person with \"Grant\" in his or her name",
     "answers": [
       {
         "text": "Ulysses S",
@@ -32955,7 +32955,7 @@
   },
   {
     "id": "q1197",
-    "question": "Name a character besides superman in the &x22;Superman&x22; comic",
+    "question": "Name a character besides superman in the \"Superman\" comic",
     "answers": [
       {
         "text": "Lois Lane",
@@ -33051,7 +33051,7 @@
   },
   {
     "id": "q1201",
-    "question": "Name someone famous with the name &x22;Ford&x22;",
+    "question": "Name someone famous with the name \"Ford\"",
     "answers": [
       {
         "text": "Henry Ford",
@@ -33547,7 +33547,7 @@
   },
   {
     "id": "q1223",
-    "question": "Name a kind of place where you see lighted &x22;Exit&x22; signs",
+    "question": "Name a kind of place where you see lighted \"Exit\" signs",
     "answers": [
       {
         "text": "Theater",
@@ -35957,7 +35957,7 @@
   },
   {
     "id": "q1320",
-    "question": "Give me another word for being &x22;undressed&x22;",
+    "question": "Give me another word for being \"undressed\"",
     "answers": [
       {
         "text": "Naked",
@@ -37551,7 +37551,7 @@
   },
   {
     "id": "q1376",
-    "question": "Give any name that starts with &x22;C&x22;",
+    "question": "Give any name that starts with \"C\"",
     "answers": [
       {
         "text": "Charles",
@@ -39335,7 +39335,7 @@
   },
   {
     "id": "q1436",
-    "question": "Name a sport where people say &x22;good shot&x22;",
+    "question": "Name a sport where people say \"good shot\"",
     "answers": [
       {
         "text": "Golf",
@@ -40189,7 +40189,7 @@
   },
   {
     "id": "q1466",
-    "question": "Tell me a fruit that begins with the letter &x22;P&x22;",
+    "question": "Tell me a fruit that begins with the letter \"P\"",
     "answers": [
       {
         "text": "Pear",
@@ -40857,7 +40857,7 @@
   },
   {
     "id": "q1488",
-    "question": "Name an instrument you often hear in &x22;blues&x22; music",
+    "question": "Name an instrument you often hear in \"blues\" music",
     "answers": [
       {
         "text": "Trumpet",
@@ -42303,7 +42303,7 @@
   },
   {
     "id": "q1539",
-    "question": "Name the month when you do your &x22;Spring Cleaning&x22;",
+    "question": "Name the month when you do your \"Spring Cleaning\"",
     "answers": [
       {
         "text": "April",
@@ -42351,7 +42351,7 @@
   },
   {
     "id": "q1541",
-    "question": "Name someone in the Bible whose name begins with &x22;J&x22;",
+    "question": "Name someone in the Bible whose name begins with \"J\"",
     "answers": [
       {
         "text": "Joseph",
@@ -43419,7 +43419,7 @@
   },
   {
     "id": "q1577",
-    "question": "Tell me how many children are &x22;too many&x22;",
+    "question": "Tell me how many children are \"too many\"",
     "answers": [
       {
         "text": "5",
@@ -44035,7 +44035,7 @@
   },
   {
     "id": "q1597",
-    "question": "Name a color that &x22;New Wave Punks&x22; dye their hair",
+    "question": "Name a color that \"New Wave Punks\" dye their hair",
     "answers": [
       {
         "text": "Purple",
@@ -44615,7 +44615,7 @@
   },
   {
     "id": "q1617",
-    "question": "Name another word for &x22;cry&x22;",
+    "question": "Name another word for \"cry\"",
     "answers": [
       {
         "text": "Weep",
@@ -45393,7 +45393,7 @@
   },
   {
     "id": "q1643",
-    "question": "Name another word for &x22;highway&x22;",
+    "question": "Name another word for \"highway\"",
     "answers": [
       {
         "text": "Freeway",
@@ -45577,7 +45577,7 @@
   },
   {
     "id": "q1649",
-    "question": "How many days could you do &x22;nothing&x22; before becoming bored?",
+    "question": "How many days could you do \"nothing\" before becoming bored?",
     "answers": [
       {
         "text": "1",
@@ -45739,7 +45739,7 @@
   },
   {
     "id": "q1655",
-    "question": "Tell me after how many dates a relationship gets &x22;serious&x22;",
+    "question": "Tell me after how many dates a relationship gets \"serious\"",
     "answers": [
       {
         "text": "5",
@@ -47461,7 +47461,7 @@
   },
   {
     "id": "q1712",
-    "question": "Name a musical instrument that &x22;Rock and Rollers&x22; don't play",
+    "question": "Name a musical instrument that \"Rock and Rollers\" don't play",
     "answers": [
       {
         "text": "Violin",
@@ -48271,7 +48271,7 @@
   },
   {
     "id": "q1739",
-    "question": "Give me a woman's name that starts with &x22;E&x22;",
+    "question": "Give me a woman's name that starts with \"E\"",
     "answers": [
       {
         "text": "Ellen",
@@ -48439,7 +48439,7 @@
   },
   {
     "id": "q1745",
-    "question": "Name a fruit sent by the &x22;Fruit of the Month&x22; club",
+    "question": "Name a fruit sent by the \"Fruit of the Month\" club",
     "answers": [
       {
         "text": "Oranges",
@@ -49991,7 +49991,7 @@
   },
   {
     "id": "q1798",
-    "question": "Give me a word or phrase containing the word &x22;chip&x22;",
+    "question": "Give me a word or phrase containing the word \"chip\"",
     "answers": [
       {
         "text": "Chocolate Chip",
@@ -50025,7 +50025,7 @@
   },
   {
     "id": "q1799",
-    "question": "Name a &x22;blonde bombshell&x22; of today",
+    "question": "Name a \"blonde bombshell\" of today",
     "answers": [
       {
         "text": "Loni Anderson",
@@ -50153,7 +50153,7 @@
   },
   {
     "id": "q1803",
-    "question": "Name a holiday that ends in the word &x22;day&x22;",
+    "question": "Name a holiday that ends in the word \"day\"",
     "answers": [
       {
         "text": "Labor Day",
@@ -50669,7 +50669,7 @@
   },
   {
     "id": "q1819",
-    "question": "Name something people buy that comes in &x22;stick&x22; form",
+    "question": "Name something people buy that comes in \"stick\" form",
     "answers": [
       {
         "text": "Gum",
@@ -50807,7 +50807,7 @@
   },
   {
     "id": "q1824",
-    "question": "What do many new husbands promise they'll get their wives &x22;someday&x22;",
+    "question": "What do many new husbands promise they'll get their wives \"someday\"",
     "answers": [
       {
         "text": "House",
@@ -50833,7 +50833,7 @@
   },
   {
     "id": "q1825",
-    "question": "Give me another word for &x22;nonsense&x22;",
+    "question": "Give me another word for \"nonsense\"",
     "answers": [
       {
         "text": "Silly",
@@ -50877,7 +50877,7 @@
   },
   {
     "id": "q1827",
-    "question": "Name someone from the Bible whose name starts with the letter &x22;M&x22;",
+    "question": "Name someone from the Bible whose name starts with the letter \"M\"",
     "answers": [
       {
         "text": "Moses",
@@ -50916,6 +50916,1550 @@
       {
         "text": "Windows",
         "points": 2
+      }
+    ]
+  },
+  {
+    "id": "q1819",
+    "question": "Name something you do when you wake up in the morning",
+    "answers": [
+      {
+        "text": "Brush teeth",
+        "points": 30
+      },
+      {
+        "text": "Stretch",
+        "points": 25
+      },
+      {
+        "text": "Yawn",
+        "points": 20
+      },
+      {
+        "text": "Check phone",
+        "points": 15
+      },
+      {
+        "text": "Use bathroom",
+        "points": 10
+      }
+    ]
+  },
+  {
+    "id": "q1820",
+    "question": "Name a fast food restaurant",
+    "answers": [
+      {
+        "text": "McDonald's",
+        "points": 50
+      },
+      {
+        "text": "Burger King",
+        "points": 20
+      },
+      {
+        "text": "Subway",
+        "points": 15
+      },
+      {
+        "text": "Taco Bell",
+        "points": 10
+      },
+      {
+        "text": "KFC",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1821",
+    "question": "Name something that gets passed around",
+    "answers": [
+      {
+        "text": "A cold",
+        "points": 34
+      },
+      {
+        "text": "A rumor",
+        "points": 23
+      },
+      {
+        "text": "A collection plate",
+        "points": 12
+      },
+      {
+        "text": "A baby",
+        "points": 9
+      },
+      {
+        "text": "Food",
+        "points": 6
+      }
+    ]
+  },
+  {
+    "id": "q1822",
+    "question": "Name something that can be inflated or deflated",
+    "answers": [
+      {
+        "text": "Balloon",
+        "points": 44
+      },
+      {
+        "text": "Tire",
+        "points": 25
+      },
+      {
+        "text": "Beach ball",
+        "points": 10
+      },
+      {
+        "text": "Ego",
+        "points": 7
+      },
+      {
+        "text": "Raft",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1823",
+    "question": "Name something you'd hate to discover had expired",
+    "answers": [
+      {
+        "text": "Driver's license",
+        "points": 37
+      },
+      {
+        "text": "Milk",
+        "points": 18
+      },
+      {
+        "text": "Credit card",
+        "points": 12
+      },
+      {
+        "text": "Insurance",
+        "points": 7
+      },
+      {
+        "text": "Car registration",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1824",
+    "question": "Name something people do in elevators when they think no one is watching",
+    "answers": [
+      {
+        "text": "Dance",
+        "points": 35
+      },
+      {
+        "text": "Check themselves out in the mirror",
+        "points": 25
+      },
+      {
+        "text": "Sing",
+        "points": 20
+      },
+      {
+        "text": "Talk to themselves",
+        "points": 15
+      },
+      {
+        "text": "Make faces",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1825",
+    "question": "Name something you might accidentally shrink in the wash",
+    "answers": [
+      {
+        "text": "Sweater",
+        "points": 40
+      },
+      {
+        "text": "Jeans",
+        "points": 25
+      },
+      {
+        "text": "Socks",
+        "points": 20
+      },
+      {
+        "text": "Towels",
+        "points": 15
+      },
+      {
+        "text": "T-shirt",
+        "points": 10
+      }
+    ]
+  },
+  {
+    "id": "q1826",
+    "question": "Name something a really lazy person might get their dog to fetch for them",
+    "answers": [
+      {
+        "text": "Newspaper",
+        "points": 48
+      },
+      {
+        "text": "Slippers",
+        "points": 26
+      },
+      {
+        "text": "Remote",
+        "points": 11
+      },
+      {
+        "text": "Beer",
+        "points": 7
+      },
+      {
+        "text": "Shoes",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1827",
+    "question": "Name something people let pile up",
+    "answers": [
+      {
+        "text": "Laundry",
+        "points": 51
+      },
+      {
+        "text": "Dishes",
+        "points": 13
+      },
+      {
+        "text": "Mail",
+        "points": 10
+      },
+      {
+        "text": "Bills",
+        "points": 10
+      },
+      {
+        "text": "Trash",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1828",
+    "question": "Name something people try to squeeze themselves into",
+    "answers": [
+      {
+        "text": "Jeans",
+        "points": 48
+      },
+      {
+        "text": "Dress",
+        "points": 21
+      },
+      {
+        "text": "Car",
+        "points": 17
+      },
+      {
+        "text": "Elevator",
+        "points": 5
+      },
+      {
+        "text": "Swimsuit",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "q1829",
+    "question": "Name a place you stop going to when you're broke",
+    "answers": [
+      {
+        "text": "Restaurants",
+        "points": 32
+      },
+      {
+        "text": "Bar/nightclub",
+        "points": 25
+      },
+      {
+        "text": "Mall",
+        "points": 16
+      },
+      {
+        "text": "Casino",
+        "points": 15
+      },
+      {
+        "text": "Movie theater",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1830",
+    "question": "Name something people postpone doing for as long as possible",
+    "answers": [
+      {
+        "text": "Paying bills",
+        "points": 36
+      },
+      {
+        "text": "Cleaning",
+        "points": 27
+      },
+      {
+        "text": "Going to the dentist",
+        "points": 15
+      },
+      {
+        "text": "Getting married",
+        "points": 8
+      },
+      {
+        "text": "Doing laundry",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1831",
+    "question": "Name something people try to get out of",
+    "answers": [
+      {
+        "text": "Jury duty",
+        "points": 40
+      },
+      {
+        "text": "Work",
+        "points": 18
+      },
+      {
+        "text": "Traffic tickets",
+        "points": 12
+      },
+      {
+        "text": "Bills",
+        "points": 7
+      },
+      {
+        "text": "Bad relationships",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1832",
+    "question": "Something people always run out of when having a party",
+    "answers": [
+      {
+        "text": "Drinks/Alcohol",
+        "points": 45
+      },
+      {
+        "text": "Ice",
+        "points": 31
+      },
+      {
+        "text": "Food",
+        "points": 9
+      },
+      {
+        "text": "Cups",
+        "points": 7
+      },
+      {
+        "text": "Space",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "q1833",
+    "question": "Name something you catch up on",
+    "answers": [
+      {
+        "text": "Sleep",
+        "points": 35
+      },
+      {
+        "text": "Reading",
+        "points": 25
+      },
+      {
+        "text": "TV shows",
+        "points": 15
+      },
+      {
+        "text": "Bills",
+        "points": 9
+      },
+      {
+        "text": "Housework",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1834",
+    "question": "Name something that is hard to do with your eyes open",
+    "answers": [
+      {
+        "text": "Sleep",
+        "points": 51
+      },
+      {
+        "text": "Sneeze",
+        "points": 31
+      },
+      {
+        "text": "Kiss",
+        "points": 14
+      },
+      {
+        "text": "Blink",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "q1835",
+    "question": "Name something people have less of as they get older",
+    "answers": [
+      {
+        "text": "Hair",
+        "points": 40
+      },
+      {
+        "text": "Energy",
+        "points": 20
+      },
+      {
+        "text": "Patience",
+        "points": 12
+      },
+      {
+        "text": "Teeth",
+        "points": 9
+      },
+      {
+        "text": "Appetite",
+        "points": 9
+      }
+    ]
+  },
+  {
+    "id": "q1836",
+    "question": "Name something that makes people sneeze",
+    "answers": [
+      {
+        "text": "Pepper",
+        "points": 52
+      },
+      {
+        "text": "Pollen",
+        "points": 30
+      },
+      {
+        "text": "Dust",
+        "points": 10
+      },
+      {
+        "text": "Perfume",
+        "points": 5
+      },
+      {
+        "text": "Cats",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1837",
+    "question": "Name a noise people can't help making",
+    "answers": [
+      {
+        "text": "Burp",
+        "points": 29
+      },
+      {
+        "text": "Sneeze",
+        "points": 26
+      },
+      {
+        "text": "Snore",
+        "points": 15
+      },
+      {
+        "text": "Pass gas",
+        "points": 10
+      },
+      {
+        "text": "Hiccup",
+        "points": 9
+      }
+    ]
+  },
+  {
+    "id": "q1838",
+    "question": "Name something people take out",
+    "answers": [
+      {
+        "text": "Trash",
+        "points": 40
+      },
+      {
+        "text": "Food to eat",
+        "points": 31
+      },
+      {
+        "text": "Money",
+        "points": 9
+      },
+      {
+        "text": "Dog",
+        "points": 8
+      },
+      {
+        "text": "A date",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1839",
+    "question": "Name something you'd hate to be in when your phone rings",
+    "answers": [
+      {
+        "text": "Bathroom",
+        "points": 30
+      },
+      {
+        "text": "Church",
+        "points": 25
+      },
+      {
+        "text": "Movie theater",
+        "points": 17
+      },
+      {
+        "text": "Important meeting",
+        "points": 9
+      },
+      {
+        "text": "Elevator",
+        "points": 6
+      }
+    ]
+  },
+  {
+    "id": "q1840",
+    "question": "Name something you do in the bathroom that you wouldn't admit to",
+    "answers": [
+      {
+        "text": "Sing",
+        "points": 38
+      },
+      {
+        "text": "Check your phone",
+        "points": 30
+      },
+      {
+        "text": "Talk to yourself",
+        "points": 16
+      },
+      {
+        "text": "Cry",
+        "points": 8
+      },
+      {
+        "text": "Eat",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1841",
+    "question": "Name a reason someone might pretend to be asleep",
+    "answers": [
+      {
+        "text": "Avoid a chore",
+        "points": 35
+      },
+      {
+        "text": "Dodge a conversation",
+        "points": 28
+      },
+      {
+        "text": "Ignore a phone call",
+        "points": 20
+      },
+      {
+        "text": "Get out of plans",
+        "points": 10
+      },
+      {
+        "text": "Avoid a person",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1842",
+    "question": "Name a place in the newspaper you wouldn't want to see your name",
+    "answers": [
+      {
+        "text": "Obituary",
+        "points": 75
+      },
+      {
+        "text": "Wanted list",
+        "points": 10
+      },
+      {
+        "text": "Scandal/front page",
+        "points": 9
+      },
+      {
+        "text": "Personals",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1843",
+    "question": "Name something that comes in sevens",
+    "answers": [
+      {
+        "text": "Days of the week",
+        "points": 40
+      },
+      {
+        "text": "Dwarfs",
+        "points": 28
+      },
+      {
+        "text": "Deadly sins",
+        "points": 23
+      },
+      {
+        "text": "Wonders of the world",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1844",
+    "question": "Name a place filled with people who don't want to be there",
+    "answers": [
+      {
+        "text": "Prison",
+        "points": 36
+      },
+      {
+        "text": "Work/office",
+        "points": 25
+      },
+      {
+        "text": "School",
+        "points": 18
+      },
+      {
+        "text": "DMV",
+        "points": 10
+      },
+      {
+        "text": "Hospital waiting room",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1845",
+    "question": "Name something you'd never sell even if you were flat broke",
+    "answers": [
+      {
+        "text": "Engagement ring",
+        "points": 40
+      },
+      {
+        "text": "My car",
+        "points": 20
+      },
+      {
+        "text": "Family heirlooms",
+        "points": 15
+      },
+      {
+        "text": "My house",
+        "points": 12
+      },
+      {
+        "text": "My dog/pet",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1846",
+    "question": "Name something that stretches",
+    "answers": [
+      {
+        "text": "Rubber band",
+        "points": 44
+      },
+      {
+        "text": "Muscles/body",
+        "points": 28
+      },
+      {
+        "text": "Clothes",
+        "points": 12
+      },
+      {
+        "text": "Budget",
+        "points": 9
+      },
+      {
+        "text": "Truth",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1847",
+    "question": "Name something you'd skip if you were late for work",
+    "answers": [
+      {
+        "text": "Breakfast",
+        "points": 50
+      },
+      {
+        "text": "Shower",
+        "points": 20
+      },
+      {
+        "text": "Brushing teeth",
+        "points": 12
+      },
+      {
+        "text": "Makeup",
+        "points": 8
+      },
+      {
+        "text": "Making the bed",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1848",
+    "question": "Name something that can ruin dinner",
+    "answers": [
+      {
+        "text": "Burnt food",
+        "points": 37
+      },
+      {
+        "text": "An argument",
+        "points": 22
+      },
+      {
+        "text": "Phone ringing",
+        "points": 11
+      },
+      {
+        "text": "Bad news",
+        "points": 9
+      },
+      {
+        "text": "Unexpected guests",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1849",
+    "question": "Name something you only want to hear once",
+    "answers": [
+      {
+        "text": "Bad news",
+        "points": 40
+      },
+      {
+        "text": "A joke",
+        "points": 18
+      },
+      {
+        "text": "A spoiler",
+        "points": 15
+      },
+      {
+        "text": "A lie",
+        "points": 12
+      },
+      {
+        "text": "Criticism",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1850",
+    "question": "Name something humans wear but cats look silly in",
+    "answers": [
+      {
+        "text": "Hats",
+        "points": 44
+      },
+      {
+        "text": "Shoes",
+        "points": 31
+      },
+      {
+        "text": "Glasses",
+        "points": 12
+      },
+      {
+        "text": "Sweater",
+        "points": 7
+      },
+      {
+        "text": "Tie",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1851",
+    "question": "Name something you'd wish grew on trees",
+    "answers": [
+      {
+        "text": "Money",
+        "points": 55
+      },
+      {
+        "text": "Food/Pizza",
+        "points": 20
+      },
+      {
+        "text": "Chocolate",
+        "points": 10
+      },
+      {
+        "text": "Clothes",
+        "points": 8
+      },
+      {
+        "text": "Medicine",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1852",
+    "question": "How can you tell immediately that an email is spam?",
+    "answers": [
+      {
+        "text": "Unknown sender",
+        "points": 35
+      },
+      {
+        "text": "Goes to junk folder",
+        "points": 25
+      },
+      {
+        "text": "No subject line",
+        "points": 18
+      },
+      {
+        "text": "Suspicious link",
+        "points": 14
+      },
+      {
+        "text": "Bad grammar",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1853",
+    "question": "Name something people lose on a roller coaster",
+    "answers": [
+      {
+        "text": "Glasses/sunglasses",
+        "points": 35
+      },
+      {
+        "text": "Hat",
+        "points": 28
+      },
+      {
+        "text": "Their lunch",
+        "points": 18
+      },
+      {
+        "text": "Money",
+        "points": 10
+      },
+      {
+        "text": "Their mind",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1854",
+    "question": "What would you do if you saw a ghost?",
+    "answers": [
+      {
+        "text": "Scream",
+        "points": 42
+      },
+      {
+        "text": "Run",
+        "points": 30
+      },
+      {
+        "text": "Talk to it",
+        "points": 14
+      },
+      {
+        "text": "Faint",
+        "points": 9
+      },
+      {
+        "text": "Pray",
+        "points": 4
+      }
+    ]
+  },
+  {
+    "id": "q1855",
+    "question": "Name something that's really hard to do with long fingernails",
+    "answers": [
+      {
+        "text": "Type on a keyboard",
+        "points": 40
+      },
+      {
+        "text": "Text on a phone",
+        "points": 28
+      },
+      {
+        "text": "Open a can",
+        "points": 15
+      },
+      {
+        "text": "Tie shoes",
+        "points": 10
+      },
+      {
+        "text": "Button a shirt",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1856",
+    "question": "Name something college students never have enough of",
+    "answers": [
+      {
+        "text": "Money",
+        "points": 55
+      },
+      {
+        "text": "Sleep",
+        "points": 30
+      },
+      {
+        "text": "Time",
+        "points": 10
+      },
+      {
+        "text": "Food",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1857",
+    "question": "Name something college students do to save money",
+    "answers": [
+      {
+        "text": "Cook at home/ramen",
+        "points": 40
+      },
+      {
+        "text": "Use student discounts",
+        "points": 25
+      },
+      {
+        "text": "Share with roommates",
+        "points": 18
+      },
+      {
+        "text": "Skip coffee shops",
+        "points": 10
+      },
+      {
+        "text": "Walk instead of drive",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1858",
+    "question": "Name something that's always dead when you need it most",
+    "answers": [
+      {
+        "text": "Phone battery",
+        "points": 60
+      },
+      {
+        "text": "Car battery",
+        "points": 20
+      },
+      {
+        "text": "TV remote",
+        "points": 10
+      },
+      {
+        "text": "Laptop",
+        "points": 7
+      },
+      {
+        "text": "Flashlight",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1859",
+    "question": "Name something people do instead of studying",
+    "answers": [
+      {
+        "text": "Watch TV/Netflix",
+        "points": 40
+      },
+      {
+        "text": "Scroll social media",
+        "points": 30
+      },
+      {
+        "text": "Sleep",
+        "points": 15
+      },
+      {
+        "text": "Eat",
+        "points": 10
+      },
+      {
+        "text": "Text friends",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1860",
+    "question": "Name something people check first thing in the morning",
+    "answers": [
+      {
+        "text": "Phone/social media",
+        "points": 55
+      },
+      {
+        "text": "Email",
+        "points": 20
+      },
+      {
+        "text": "News",
+        "points": 10
+      },
+      {
+        "text": "The time",
+        "points": 8
+      },
+      {
+        "text": "The weather",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1861",
+    "question": "Name a reason someone might ghost you",
+    "answers": [
+      {
+        "text": "They lost interest",
+        "points": 40
+      },
+      {
+        "text": "They're seeing someone else",
+        "points": 25
+      },
+      {
+        "text": "Too busy",
+        "points": 15
+      },
+      {
+        "text": "Awkward last conversation",
+        "points": 12
+      },
+      {
+        "text": "They moved away",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1862",
+    "question": "Name something people post too much of on social media",
+    "answers": [
+      {
+        "text": "Selfies",
+        "points": 45
+      },
+      {
+        "text": "Food photos",
+        "points": 25
+      },
+      {
+        "text": "Workout updates",
+        "points": 15
+      },
+      {
+        "text": "Relationship stuff",
+        "points": 10
+      },
+      {
+        "text": "Political opinions",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1863",
+    "question": "Name something you do when you're bored in class",
+    "answers": [
+      {
+        "text": "Check your phone",
+        "points": 50
+      },
+      {
+        "text": "Doodle",
+        "points": 25
+      },
+      {
+        "text": "Pass notes",
+        "points": 10
+      },
+      {
+        "text": "Daydream",
+        "points": 8
+      },
+      {
+        "text": "Sleep",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1864",
+    "question": "Name something students bring to an exam they shouldn't",
+    "answers": [
+      {
+        "text": "Cheat sheet",
+        "points": 40
+      },
+      {
+        "text": "Phone",
+        "points": 30
+      },
+      {
+        "text": "Food",
+        "points": 15
+      },
+      {
+        "text": "Their pillow",
+        "points": 8
+      },
+      {
+        "text": "A friend",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1865",
+    "question": "Name a streaming service people share a password for",
+    "answers": [
+      {
+        "text": "Netflix",
+        "points": 55
+      },
+      {
+        "text": "Hulu",
+        "points": 20
+      },
+      {
+        "text": "Disney+",
+        "points": 12
+      },
+      {
+        "text": "HBO Max/Max",
+        "points": 8
+      },
+      {
+        "text": "Spotify",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1866",
+    "question": "Name something people binge-watch",
+    "answers": [
+      {
+        "text": "Reality TV",
+        "points": 35
+      },
+      {
+        "text": "Crime/Mystery shows",
+        "points": 25
+      },
+      {
+        "text": "Anime",
+        "points": 18
+      },
+      {
+        "text": "Sitcoms",
+        "points": 12
+      },
+      {
+        "text": "Documentaries",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1867",
+    "question": "Name something that makes a flight more bearable",
+    "answers": [
+      {
+        "text": "Headphones/music",
+        "points": 45
+      },
+      {
+        "text": "Movies/TV",
+        "points": 30
+      },
+      {
+        "text": "Snacks",
+        "points": 12
+      },
+      {
+        "text": "Sleep",
+        "points": 8
+      },
+      {
+        "text": "A good book",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1868",
+    "question": "Name something people do on their phone while on the toilet",
+    "answers": [
+      {
+        "text": "Scroll social media",
+        "points": 50
+      },
+      {
+        "text": "Text",
+        "points": 25
+      },
+      {
+        "text": "Watch videos",
+        "points": 15
+      },
+      {
+        "text": "Play games",
+        "points": 8
+      },
+      {
+        "text": "Read articles",
+        "points": 2
+      }
+    ]
+  },
+  {
+    "id": "q1869",
+    "question": "Name a reason someone cancels plans last minute",
+    "answers": [
+      {
+        "text": "Too tired",
+        "points": 45
+      },
+      {
+        "text": "Forgot",
+        "points": 20
+      },
+      {
+        "text": "Work came up",
+        "points": 15
+      },
+      {
+        "text": "Sick",
+        "points": 12
+      },
+      {
+        "text": "Better offer",
+        "points": 8
+      }
+    ]
+  },
+  {
+    "id": "q1870",
+    "question": "Name something people lie about on their resume",
+    "answers": [
+      {
+        "text": "Experience",
+        "points": 40
+      },
+      {
+        "text": "Skills",
+        "points": 30
+      },
+      {
+        "text": "Education",
+        "points": 15
+      },
+      {
+        "text": "Job title",
+        "points": 8
+      },
+      {
+        "text": "References",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1871",
+    "question": "Name something you do when you're nervous",
+    "answers": [
+      {
+        "text": "Sweat",
+        "points": 35
+      },
+      {
+        "text": "Bite nails",
+        "points": 25
+      },
+      {
+        "text": "Pace",
+        "points": 18
+      },
+      {
+        "text": "Fidget",
+        "points": 12
+      },
+      {
+        "text": "Laugh awkwardly",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1872",
+    "question": "Name something people order most at a coffee shop",
+    "answers": [
+      {
+        "text": "Latte",
+        "points": 40
+      },
+      {
+        "text": "Regular coffee",
+        "points": 25
+      },
+      {
+        "text": "Iced coffee",
+        "points": 20
+      },
+      {
+        "text": "Cappuccino",
+        "points": 8
+      },
+      {
+        "text": "Frappuccino",
+        "points": 7
+      }
+    ]
+  },
+  {
+    "id": "q1873",
+    "question": "Name something you do when a song you love comes on",
+    "answers": [
+      {
+        "text": "Sing along",
+        "points": 50
+      },
+      {
+        "text": "Dance",
+        "points": 30
+      },
+      {
+        "text": "Turn it up",
+        "points": 12
+      },
+      {
+        "text": "Record it",
+        "points": 5
+      },
+      {
+        "text": "Text a friend",
+        "points": 3
+      }
+    ]
+  },
+  {
+    "id": "q1874",
+    "question": "Name something people do when they're drunk that they wouldn't sober",
+    "answers": [
+      {
+        "text": "Text their ex",
+        "points": 40
+      },
+      {
+        "text": "Dance",
+        "points": 30
+      },
+      {
+        "text": "Confess feelings",
+        "points": 15
+      },
+      {
+        "text": "Spend money",
+        "points": 10
+      },
+      {
+        "text": "Make promises",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1875",
+    "question": "Name an excuse people give for not going to the gym",
+    "answers": [
+      {
+        "text": "Too tired",
+        "points": 45
+      },
+      {
+        "text": "No time",
+        "points": 30
+      },
+      {
+        "text": "Injured",
+        "points": 10
+      },
+      {
+        "text": "Too expensive",
+        "points": 8
+      },
+      {
+        "text": "It's raining",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1876",
+    "question": "Name something you do the night before a big day",
+    "answers": [
+      {
+        "text": "Lay out your outfit",
+        "points": 35
+      },
+      {
+        "text": "Can't sleep",
+        "points": 30
+      },
+      {
+        "text": "Set multiple alarms",
+        "points": 20
+      },
+      {
+        "text": "Pack a bag",
+        "points": 10
+      },
+      {
+        "text": "Eat a big meal",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1877",
+    "question": "Name something that always goes missing in college dorms",
+    "answers": [
+      {
+        "text": "Food/snacks",
+        "points": 45
+      },
+      {
+        "text": "Charger",
+        "points": 25
+      },
+      {
+        "text": "Socks",
+        "points": 15
+      },
+      {
+        "text": "Keys",
+        "points": 10
+      },
+      {
+        "text": "Pens",
+        "points": 5
+      }
+    ]
+  },
+  {
+    "id": "q1878",
+    "question": "Name something roommates fight about",
+    "answers": [
+      {
+        "text": "Cleaning/chores",
+        "points": 50
+      },
+      {
+        "text": "Noise/quiet hours",
+        "points": 22
+      },
+      {
+        "text": "Food stealing",
+        "points": 14
+      },
+      {
+        "text": "Guests/visitors",
+        "points": 8
+      },
+      {
+        "text": "Temperature",
+        "points": 6
       }
     ]
   }

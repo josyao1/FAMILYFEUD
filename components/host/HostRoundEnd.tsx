@@ -12,22 +12,36 @@ type Props = {
 export default function HostRoundEnd({ code, state }: Props) {
   const [multiplier, setMultiplier] = useState<1 | 2>(1)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const { teams, scores } = state
 
   async function handleNextRound() {
     setLoading(true)
-    await nextRound(code, state, multiplier)
-    setLoading(false)
+    setError(null)
+    try {
+      await nextRound(code, state, multiplier)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to start next round.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function handleEndGame() {
     setLoading(true)
-    await endGame(code, state)
-    setLoading(false)
+    setError(null)
+    try {
+      await endGame(code, state)
+    } catch {
+      setError('Failed to end game.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div className="flex flex-col gap-4 p-4">
+      {error && <p className="text-red-400 text-sm text-center bg-red-900/30 rounded-lg px-3 py-2">{error}</p>}
       <h2 className="text-yellow-400 font-bold text-xl text-center">ROUND OVER</h2>
 
       {/* Scores */}

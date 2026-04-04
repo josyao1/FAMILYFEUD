@@ -7,6 +7,7 @@ import {
   faceoffDecision,
   setFaceoffWinner,
   startFaceoff,
+  revealQuestion,
 } from '@/lib/gameActions'
 
 type Props = {
@@ -15,6 +16,18 @@ type Props = {
 }
 
 type Step = 'select_buzzer' | 'first_answer' | 'offer_counter' | 'counter_answer' | 'pass_play'
+
+function deriveInitialStep(faceoff: GameState['faceoff']): Step {
+  if (faceoff.winnerTeam !== null || (faceoff.team0Answer !== null && faceoff.team1Answer !== null)) return 'pass_play'
+  if (faceoff.team0Answer !== null || faceoff.team1Answer !== null) return 'offer_counter'
+  return 'select_buzzer'
+}
+
+function deriveFirstTeam(faceoff: GameState['faceoff']): 0 | 1 | null {
+  if (faceoff.team0Answer !== null && faceoff.team1Answer === null) return 0
+  if (faceoff.team1Answer !== null && faceoff.team0Answer === null) return 1
+  return null
+}
 
 function AnswerPicker({
   answers,
@@ -66,9 +79,10 @@ function AnswerPicker({
 
 export default function HostFaceoff({ code, state }: Props) {
   const { faceoff, teams, currentQuestion } = state
-  const [firstTeam, setFirstTeam] = useState<0 | 1 | null>(null)
-  const [step, setStep] = useState<Step>('select_buzzer')
+  const [firstTeam, setFirstTeam] = useState<0 | 1 | null>(() => deriveFirstTeam(faceoff))
+  const [step, setStep] = useState<Step>(() => deriveInitialStep(faceoff))
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [guessedIndices, setGuessedIndices] = useState<number[]>([])
 
   const answers = currentQuestion?.answers ?? []
@@ -83,49 +97,93 @@ export default function HostFaceoff({ code, state }: Props) {
   async function handleFirstAnswer(text: string, rank: number | null) {
     if (firstTeam === null) return
     setLoading(true)
-    if (rank !== null) setGuessedIndices(prev => [...prev, rank - 1])
-    await submitFaceoffAnswer(code, state, firstTeam, text, rank)
-    setLoading(false)
-    setStep('offer_counter')
+    setError(null)
+    try {
+      if (rank !== null) setGuessedIndices(prev => [...prev, rank - 1])
+      await submitFaceoffAnswer(code, state, firstTeam, text, rank)
+      setStep('offer_counter')
+    } catch {
+      setError('Failed to submit answer.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function handleCounterAnswer(text: string, rank: number | null) {
     if (counterTeam === null) return
     setLoading(true)
-    if (rank !== null) setGuessedIndices(prev => [...prev, rank - 1])
-    await submitFaceoffAnswer(code, state, counterTeam, text, rank)
-    setLoading(false)
-    setStep('pass_play')
+    setError(null)
+    try {
+      if (rank !== null) setGuessedIndices(prev => [...prev, rank - 1])
+      await submitFaceoffAnswer(code, state, counterTeam, text, rank)
+      setStep('pass_play')
+    } catch {
+      setError('Failed to submit answer.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   function handleGoAgain() {
-    // Both missed — T1 (firstTeam) guesses again
     setStep('first_answer')
   }
 
   async function handleSetWinner(team: 0 | 1) {
     setLoading(true)
-    await setFaceoffWinner(code, state, team)
-    setLoading(false)
-    setStep('pass_play')
+    setError(null)
+    try {
+      await setFaceoffWinner(code, state, team)
+      setStep('pass_play')
+    } catch {
+      setError('Failed to set winner.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function handleDecision(decision: 'pass' | 'play') {
     setLoading(true)
-    await faceoffDecision(code, state, decision)
-    setLoading(false)
+    setError(null)
+    try {
+      await faceoffDecision(code, state, decision)
+    } catch {
+      setError('Failed to record decision.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   async function handleSkipQuestion() {
     setLoading(true)
-    setStep('select_buzzer')
-    setFirstTeam(null)
-    await startFaceoff(code, state)
-    setLoading(false)
+    setError(null)
+    try {
+      await startFaceoff(code, state)
+      setStep('select_buzzer')
+      setFirstTeam(null)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to skip question.')
+    } finally {
+      setLoading(false)
+    }
   }
+
+  async function handleRevealQuestion() {
+    setLoading(true)
+    setError(null)
+    try {
+      await revealQuestion(code, state)
+    } catch {
+      setError('Failed to reveal question.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const questionRevealed = state.questionRevealed
 
   return (
     <div className="flex flex-col gap-4 p-4">
+      {error && <p className="text-red-400 text-sm text-center bg-red-900/30 rounded-lg px-3 py-2">{error}</p>}
       <div className="flex items-center justify-between">
         <h2 className="text-yellow-400 font-bold text-lg">FACE-OFF</h2>
         <button
@@ -140,6 +198,21 @@ export default function HostFaceoff({ code, state }: Props) {
       <div className="bg-gray-800 rounded-lg p-3">
         <p className="text-white text-sm">{currentQuestion?.question}</p>
       </div>
+
+      {!questionRevealed && (
+        <button
+          onClick={handleRevealQuestion}
+          disabled={loading}
+          className="w-full py-3 bg-yellow-600 text-white font-bold text-lg rounded-xl active:scale-95 disabled:opacity-50"
+        >
+          Reveal Question on Board →
+        </button>
+      )}
+      {questionRevealed && (
+        <div className="text-center text-green-400 text-sm font-semibold">
+          ✓ Question visible on board
+        </div>
+      )}
 
       {/* Always-visible answer reference */}
       <div className="bg-gray-900 rounded-lg p-3 border border-gray-700">

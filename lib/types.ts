@@ -24,6 +24,7 @@ export type GameState = {
   multiplier: 1 | 2
   usedQuestionIds: string[]
   currentQuestion: Question | null
+  questionRevealed: boolean
   board: {
     answers: Array<Answer & { revealed: boolean }>
     strikes: number
@@ -41,6 +42,7 @@ export type GameState = {
   }
   steal: {
     stealingTeam: 0 | 1 | null
+    tileRevealed: boolean
   }
   timer: {
     startedAt: number | null  // Date.now() ms when started, null = idle

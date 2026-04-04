@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function FaceoffDisplay({ state }: Props) {
-  const { currentQuestion, faceoff, teams, board } = state
+  const { currentQuestion, faceoff, teams, board, questionRevealed } = state
 
   return (
     <div className="flex flex-col gap-4 w-full">
@@ -20,9 +20,15 @@ export default function FaceoffDisplay({ state }: Props) {
           border: '2px solid #6aaaf5',
         }}
       >
-        <p className="text-white font-impact text-xl md:text-3xl uppercase tracking-wide">
-          {currentQuestion?.question}
-        </p>
+        {questionRevealed ? (
+          <p className="text-white font-impact text-xl md:text-3xl uppercase tracking-wide">
+            {currentQuestion?.question}
+          </p>
+        ) : (
+          <p className="text-white/40 font-impact text-xl md:text-3xl uppercase tracking-widest animate-pulse">
+            ? ? ? ? ?
+          </p>
+        )}
       </div>
 
       {/* Answer tiles — flip when a faceoff answer is correct */}
